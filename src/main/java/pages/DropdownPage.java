@@ -7,12 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class DropdownPage extends BasePage {
-    private By dropdown = By.id("dropdown");
+    private final By dropdown = By.id("dropdown");
 
     public DropdownPage(WebDriver driver) {
         super(driver);
@@ -37,7 +36,7 @@ public class DropdownPage extends BasePage {
         WebElement target = driver.findElement(dropdown);
 //        var jsExecutor = ((JavascriptExecutor)driver);
         String script = "arguments[0].setAttribute('multiple','');";
-        ((JavascriptExecutor)driver).executeScript(script,target);
+        ((JavascriptExecutor) driver).executeScript(script, target);
 
 
     }

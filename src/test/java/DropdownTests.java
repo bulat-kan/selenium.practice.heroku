@@ -1,4 +1,3 @@
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 import pages.DropdownPage;
 

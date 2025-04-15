@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class InfiniteScrollPage extends BasePage{
 
-    private By paragraph = By.cssSelector(".jscroll-added");
+    final private By paragraph = By.cssSelector(".jscroll-added");
     public InfiniteScrollPage(WebDriver driver) {
         super(driver);
     }

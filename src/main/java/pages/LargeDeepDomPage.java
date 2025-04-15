@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 public class LargeDeepDomPage extends BasePage {
 
-    private By tableColumn10row21 = By.xpath("//td[normalize-space()='17.32']");
+    private final By tableColumn10row21 = By.xpath("//td[normalize-space()='17.32']");
 
     public LargeDeepDomPage(WebDriver driver) {
         super(driver);
