@@ -104,4 +104,13 @@ public class HomePage extends BasePage {
         return new DynamicLoadingPage(driver);
     }
 
+    public LargeDeepDomPage clickLargeNDeepDom(){
+        clickLink("Large & Deep DOM");
+        return new LargeDeepDomPage(driver);
+    }
+
+    public InfiniteScrollPage clickInfiniteScroll() {
+        clickLink("Infinite Scroll");
+        return new InfiniteScrollPage(driver);
+    }
 }

@@ -17,4 +17,6 @@ public class DynamicElementsTests extends BaseTest{
         String loadedText = dynamicLoadingPage.clickeLinkExample2().clickStart().getLoadedText();
         Assert.assertEquals(loadedText,"Hello World!", "wrong loaded text");
     }
+
+
 }
