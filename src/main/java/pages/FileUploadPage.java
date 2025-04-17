@@ -13,12 +13,14 @@ public class FileUploadPage extends BasePage {
     public FileUploadPage(WebDriver driver) {
         super(driver);
     }
-    public void uploadFile(String absolutePathToFile){
+
+    public void uploadFile(String absolutePathToFile) {
         driver.findElement(inputFld).sendKeys(absolutePathToFile);
         clickUploadBtn();
 
     }
-    public void clickUploadBtn(){
+
+    public void clickUploadBtn() {
         driver.findElement(uploadBtn).click();
     }
 

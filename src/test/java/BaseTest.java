@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.HomePage;
-import utils.WindowManager;
+import utils.NavigationUtil;
 
 public class BaseTest {
     protected WebDriver driver;
@@ -42,8 +42,8 @@ public class BaseTest {
         }
     }
 
-    protected WindowManager getWindowManager(){
-        return new WindowManager(driver);
+    protected NavigationUtil getNavigationUtil(){
+        return new NavigationUtil(driver);
     }
 
 }

@@ -1,22 +1,31 @@
 import org.testng.annotations.Test;
+import utils.WindowUtil;
 
-public class NavigationTests extends BaseTest{
+public class NavigationTests extends BaseTest {
 
     @Test
-    public void testingNavigationUtils(){
+    public void testingNavigationUtils() {
         homePage.load().clickDynamicLoading().clickLinkExample1();
-        getWindowManager().goBack();
-        getWindowManager().goForward();
-        getWindowManager().refreshPage();
-        getWindowManager().goTo("https://www.google.com/");
+        getNavigationUtil().goBack();
+        getNavigationUtil().goForward();
+        getNavigationUtil().refreshPage();
+        getNavigationUtil().goTo("https://www.google.com/");
     }
 
     @Test
-    public void testSwitchingBetweenTabs(){
+    public void testSwitchingBetweenTabs() {
         homePage.load().clickMultipleWindows().clickHere();
-        getWindowManager().switchToWindow("New Window");
-        getWindowManager().switchToWindow("The Internet");
-        getWindowManager().switchToWindow("New Window");
+        WindowUtil.switchToWindow(driver,"New Window");
+        WindowUtil.switchToWindow(driver,"The Internet");
+        WindowUtil.switchToWindow(driver,"New Window");
+
+    }
+
+    @Test
+    public void openLinkInANewTabTest() {
+        var dynamicLoadingPage = homePage.load().clickDynamicLoading();
+        dynamicLoadingPage.openExampleOneInNewTab();
+        dynamicLoadingPage.closeCurrentTabAndSwitchToPrevious();
 
     }
 

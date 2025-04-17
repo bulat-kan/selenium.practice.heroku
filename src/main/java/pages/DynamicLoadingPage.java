@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import utils.ActionsUtil;
+import utils.WindowUtil;
 
 public class DynamicLoadingPage extends BasePage {
 
@@ -22,5 +24,13 @@ public class DynamicLoadingPage extends BasePage {
     public DynamicLoadingPage2 clickeLinkExample2() {
         wait.until(ExpectedConditions.elementToBeClickable(example2Link)).click();
         return new DynamicLoadingPage2(driver);
+    }
+
+    public void openExampleOneInNewTab() {
+        ActionsUtil.openLinkInNewTab( driver, example1Link);
+        WindowUtil.switchToNewTab(driver);
+    }
+    public void closeCurrentTabAndSwitchToPrevious(){
+        WindowUtil.closeCurrentTabAndSwitchToPrevious(driver);
     }
 }
